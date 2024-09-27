@@ -1,4 +1,4 @@
-<nav class="navbar bg-primary" data-bs-theme="dark">
+<nav class="navbar" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="" role="button">Write an article</a>
     <a class="navbar-brand fw-bold" href="" role="button">Echo Blog</a>

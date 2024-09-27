@@ -9,8 +9,7 @@
 </head>
 <body>
     @include('componets.navbar')
-
-    @yield('app')
+    @include('componets.categorybar')
 
     @include('libraries.scripts')
 </body>
