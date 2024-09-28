@@ -14,4 +14,9 @@ class HomeController extends Controller{
         return view('pages.loginSignup');
     }
 
+    public function userProfile()
+    {
+        return view('pages.userProfile');
+    }
+
 }

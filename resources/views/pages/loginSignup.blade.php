@@ -17,10 +17,10 @@
                         <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
                     </div>
                     <div class="input-group mb-3">
-                        <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
+                        <a class="btn btn-lg btn-primary w-100 fs-6 text-decoration-none" href="{{ route('userProfile') }}">Login<a>
                     </div>
-                    <div class="row">
-                        <small>Don't have an account? <a href="#" id="show-signup">Sign Up</a></small>
+                    <div class="d-flex">
+                        <small>Don't have an account? &nbsp; <a href="#" id="show-signup">Sign Up</a></small>
                     </div>
                 </div>
             </div> 
@@ -47,10 +47,10 @@
                         <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
                     </div>
                     <div class="input-group mb-3">
-                        <button class="btn btn-lg btn-primary w-100 fs-6">Signup</button>
+                        <a class="btn btn-lg btn-primary w-100 fs-6 text-decoration-none" href="{{ route('userProfile') }}">Signup<a>
                     </div>
-                    <div class="row">
-                        <small>Already have an account? <a href="#" id="show-login">Log In</a></small>
+                    <div class="d-flex">
+                        <small>Already have an account? &nbsp; <a href="#" id="show-login">Log In</a></small>
                     </div>
                 </div>
             </div> 
