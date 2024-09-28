@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echo Blog</title>
-    <link rel="icon" href="images/echo-blog.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Article View</title>
     @include('libraries.styles')
 </head>
 <body>
     @include('componets.navbar')
-    @include('componets.categorybar')
-    @include('componets.articlePost')
-    @include('componets.articlePost')
-    @include('componets.articlePost')
-
+    @include('layouts.readArticle')
+    
     @include('libraries.scripts')
 </body>
 </html>

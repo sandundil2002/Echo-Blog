@@ -3,7 +3,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a class="text-decoration-none" href="">
+                        <a class="text-decoration-none" href="{{ route('articleView') }}">
                             Java is a versatile programming language
                         </a>
                     </h5>

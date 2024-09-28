@@ -19,4 +19,9 @@ class HomeController extends Controller{
         return view('pages.userProfile');
     }
 
+    public function articleView()
+    {
+        return view('pages.articleView');
+    }
+
 }
