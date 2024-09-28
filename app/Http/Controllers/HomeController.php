@@ -24,4 +24,9 @@ class HomeController extends Controller{
         return view('pages.articleView');
     }
 
+    public function articleWrite()
+    {
+        return view('pages.articleWrite');
+    }
+
 }
