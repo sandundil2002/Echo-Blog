@@ -9,7 +9,8 @@
     @include('libraries.styles')
 </head>
 <body>
-    <section id="signup-form" class="form-section">
+    <form action="{{ route('saveUser') }}" id="signup-form" class="form-section" method="POST">
+        @csrf
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
             <div class="row border rounded-5 p-3 shadow box-area">
                 <div class="col-md-12 right-box">
@@ -19,16 +20,16 @@
                             <p>We warmly welcome you to Echo Blog.</p>
                         </div>
                         <div class="input-group mb-3 d-flex">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Your Name">
+                            <input type="text" id="name" name="name" class="form-control text-capitalize form-control-lg bg-light fs-6" placeholder="Your Name" required>
                         </div>
                         <div class="input-group mb-3 d-flex">
-                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                            <input type="text" id="email" name="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" required>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                            <input type="password" id="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
                         </div>
                         <div class="input-group mb-3">
-                            <a class="btn btn-lg btn-primary w-100 fs-6 text-decoration-none" href="{{ route('userProfile') }}">Signup<a>
+                            <button type="submit" class="btn btn-lg btn-primary w-100 fs-6 text-decoration-none" >Signup</button>
                         </div>
                         <div class="d-flex">
                             <small>Already have an account? &nbsp; <a href="#" id="show-login">Log In</a></small>
@@ -37,7 +38,7 @@
                 </div> 
             </div>
         </div>
-    </section>
+    </form>
 
     @include('libraries.scripts')
 </body>

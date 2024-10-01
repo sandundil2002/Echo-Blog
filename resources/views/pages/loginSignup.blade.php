@@ -15,11 +15,6 @@
 </body>
 </html>
 
-
-
-
-
-
 <script>
     $(document).ready(function() {
         $('#show-signup').on('click', function(e) {
