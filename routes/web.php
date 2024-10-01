@@ -9,4 +9,5 @@ Route::get('/login-signup', [HomeController::class, 'showLoginSignupForm'])->nam
 Route::get('/user-profile', [HomeController::class, 'userProfile'])->name('userProfile');
 Route::get('/article-view', [HomeController::class, 'articleView'])->name('articleView');
 Route::get('/article-write', [HomeController::class, 'articleWrite'])->name('articleWrite');
+Route::post('/checkUser', [UserController::class, 'checkUser'])->name('checkUser');
 Route::post('/login-signup', [UserController::class, 'saveUser'])->name('saveUser');

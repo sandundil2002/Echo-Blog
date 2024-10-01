@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use Auth;
 use Hash;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,23 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('userProfile')->with('success', 'User created successfully.');
+    }
+
+    public function checkUser(Request $request)
+    {
+        $request->validate([
+            'loginEmail' => 'required|email',
+            'loginPassword' => 'required',
+        ]);
+
+        $user = Users::where('email', $request->loginEmail)->first();
+
+        if ($user && Hash::check($request->loginPassword, $user->password)) {
+            return redirect()->intended('/user-profile');
+        }
+
+        return back()->withErrors([
+            'loginEmail' => 'The provided credentials do not match our records.',
+        ]);
     }
 }
