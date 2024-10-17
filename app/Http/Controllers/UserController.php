@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
-use Auth;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -36,6 +36,8 @@ class UserController extends Controller
         $user = Users::where('email', $request->loginEmail)->first();
 
         if ($user && Hash::check($request->loginPassword, $user->password)) {
+            Session::put('userId', $user->id);
+            Session::put('userName', $user->name);
             return redirect()->intended('/user-profile');
         }
 
