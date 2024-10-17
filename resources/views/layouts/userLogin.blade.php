@@ -22,7 +22,7 @@
                             <input type="email" id="loginEmail" name="loginEmail" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" required>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" id="loginPassword" name="loginPassword" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                            <input type="password" id="loginPassword" name="loginPassword" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
                         </div>
                         <div class="input-group mb-3">
                             <button type="submit" class="btn btn-lg btn-primary w-100 fs-6 text-decoration-none">Login</button>
