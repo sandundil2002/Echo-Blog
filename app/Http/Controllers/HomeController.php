@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Posts;
 
 class HomeController extends Controller{
     public function index(){
-        return view('pages.index');
+        try {
+            $articles = Posts::all();
+            return view('pages.index', compact('articles'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while retrieving articles.');
+        }
     }
 
     public function showLoginSignupForm()

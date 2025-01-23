@@ -9,6 +9,7 @@
 </head>
 <body>
     @include('componets.profileNavbar')
+    
     @include('layouts.profileWall')
 
     @include('libraries.scripts')

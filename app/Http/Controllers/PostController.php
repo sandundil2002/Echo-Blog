@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
+use Psy\Readline\Hoa\Console;
 use Session;
 use Validator;
 
@@ -41,4 +42,31 @@ class PostController extends Controller
             return redirect()->back()->with('error', 'There was an error creating the post!');
         }
     }
+
+    public function getPostsByUserId($userId)
+    {
+        try {
+            $article = Posts::findOrFail($userId);
+            
+
+            if ($article->isEmpty()) {
+                return redirect()->back()->with('error', 'No posts found for the specified user.');
+            }
+
+            return view('article-view', compact('article'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while retrieving posts.');
+        }
+    }
+
+    // public function getAllArticles()
+    // {
+    //     try {
+    //         $articles = Posts::all();
+    //         return view('pages.userProfile', compact('articles'));
+    //     } catch (\Exception $e) {
+    //         return redirect()->back()->with('error', 'An error occurred while retrieving articles.');
+    //     }
+    // }
+
 }

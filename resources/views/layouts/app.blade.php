@@ -9,9 +9,9 @@
 </head>
 <body>
     @include('componets.navbar')
+
     @include('componets.categorybar')
-    @include('componets.articlePost')
-    @include('componets.articlePost')
+
     @include('componets.articlePost')
 
     @include('libraries.scripts')
