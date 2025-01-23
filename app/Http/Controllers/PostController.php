@@ -7,6 +7,7 @@ use App\Models\Posts;
 use Psy\Readline\Hoa\Console;
 use Session;
 use Validator;
+use function Laravel\Prompts\alert;
 
 class PostController extends Controller
 {
@@ -43,30 +44,14 @@ class PostController extends Controller
         }
     }
 
-    public function getPostsByUserId($userId)
+    public function userArticles()
     {
         try {
-            $article = Posts::findOrFail($userId);
-            
-
-            if ($article->isEmpty()) {
-                return redirect()->back()->with('error', 'No posts found for the specified user.');
-            }
-
-            return view('article-view', compact('article'));
+            $userId = Session::get('userId');
+            $articles = Posts::where('user_id', $userId)->get();
+            return view('pages.userProfile', compact('articles'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred while retrieving posts.');
         }
     }
-
-    // public function getAllArticles()
-    // {
-    //     try {
-    //         $articles = Posts::all();
-    //         return view('pages.userProfile', compact('articles'));
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'An error occurred while retrieving articles.');
-    //     }
-    // }
-
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    {{-- @include('componets.articlePost') --}}
+    @include('componets.articlePost')
     
     @include('libraries.scripts')
 </body>

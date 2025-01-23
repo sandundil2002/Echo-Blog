@@ -14,4 +14,4 @@ Route::get('/article-write', [HomeController::class, 'articleWrite'])->name('art
 Route::post('/checkUser', [UserController::class, 'checkUser'])->name('checkUser');
 Route::post('/login-signup', [UserController::class, 'saveUser'])->name('saveUser');
 Route::post('/article-write', [PostController::class,'savePost'])->name('savePost');
-// Route::get('/article-view/{id}', [HomeController::class, 'articleView'])->name('articleView');
+Route::get('/user-profile', [PostController::class, 'userArticles'])->name('articleView');
