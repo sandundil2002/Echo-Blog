@@ -9,15 +9,15 @@
 </head>
 <body>
 
-    @include('componets.articlePost')
-    
+    @include('components.profileArticles')
+
     @include('libraries.scripts')
 </body>
 </html>
 
 <style>
     .card-body {
-        padding-right: 10px; 
+        padding-right: 10px;
     }
 
     .col-md-4 {
@@ -25,7 +25,7 @@
     }
 
     .img-fluid {
-        object-fit: cover; 
+        object-fit: cover;
         height: 30vh;
     }
 </style>

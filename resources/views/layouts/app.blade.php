@@ -8,11 +8,11 @@
     @include('libraries.styles')
 </head>
 <body>
-    @include('componets.navbar')
+    @include('components.navbar')
 
-    @include('componets.categorybar')
+    @include('components.categorybar')
 
-    @include('componets.articlePost')
+    @include('components.homeArticles')
 
     @include('libraries.scripts')
 </body>

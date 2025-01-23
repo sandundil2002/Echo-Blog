@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @include('componets.loginSignupStyles')
+    @include('components.loginSignupStyles')
     @include('libraries.styles')
 </head>
 <body>
@@ -35,7 +35,7 @@
                             <small>Already have an account? &nbsp; <a href="#" id="show-login">Log In</a></small>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </form>

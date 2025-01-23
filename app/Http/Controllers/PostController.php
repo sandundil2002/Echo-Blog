@@ -16,8 +16,8 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'category' => 'required',
-            'contents' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'contents' => 'required|string',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -54,4 +54,17 @@ class PostController extends Controller
             return redirect()->back()->with('error', 'An error occurred while retrieving posts.');
         }
     }
+
+    public function deleteArticle($id)
+    {
+        try {
+            $article = Posts::findOrFail($id);
+            $article->delete();
+
+            return redirect()->intended('/user-profile')->with('success', 'Post created successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to delete the article.');
+        }
+    }
+
 }

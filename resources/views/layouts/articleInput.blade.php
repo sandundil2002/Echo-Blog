@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('savePost') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('savePost') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="m-3">
             <div class="mb-3 d-flex gap-4">

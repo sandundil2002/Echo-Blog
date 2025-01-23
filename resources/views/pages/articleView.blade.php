@@ -8,9 +8,9 @@
     @include('libraries.styles')
 </head>
 <body>
-    @include('componets.navbar')
+    @include('components.navbar')
     @include('layouts.readArticle')
-    
+
     @include('libraries.scripts')
 </body>
 </html>

@@ -8,8 +8,8 @@
     @include('libraries.styles')
 </head>
 <body>
-    @include('componets.profileNavbar')
-    
+    @include('components.profileNavbar')
+
     @include('layouts.profileWall')
 
     @include('libraries.scripts')

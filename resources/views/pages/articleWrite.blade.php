@@ -8,9 +8,10 @@
     @include('libraries.styles')
 </head>
 <body>
-    @include('componets.profileNavbar')
-    @include('layouts.articleInput')
+    @include('components.profileNavbar')
     
+    @include('layouts.articleInput')
+
     @include('libraries.scripts')
 </body>
 </html>
