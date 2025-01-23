@@ -3,6 +3,7 @@
 <div class="category-bar-container">
     <div class="d-flex align-items-center scrollable-bar">
         <div class="scrollable-content" id="scrollableContent">
+            <a href="#">All</a>
             <a href="#">Education</a>
             <a href="#">Programming</a>
             <a href="#">Technology</a>
