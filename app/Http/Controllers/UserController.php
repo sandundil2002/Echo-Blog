@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
-    public function saveUser(Request $request) 
+    public function saveUser(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -23,7 +23,12 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->route('userProfile')->with('success', 'User created successfully.');
+        $userId = $user->id;
+
+        Session::put('userId', $userId);
+        Session::put('userName', $user->name);
+
+        return redirect()->intended('/user-profile')->with('success', 'User created successfully!');
     }
 
     public function checkUser(Request $request)

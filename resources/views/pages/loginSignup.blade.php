@@ -10,6 +10,7 @@
 </head>
 <body>
     @include('layouts.userLogin')
+    
     @include('layouts.userSignup')
     
     @include('libraries.scripts')
