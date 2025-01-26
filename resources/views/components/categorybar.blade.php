@@ -19,7 +19,6 @@
 </div>
 
 <style>
-    /*styles for the category bar */
     .category-bar-container {
         background-color: #e0e0e0;
     }

@@ -35,6 +35,13 @@ class HomeController extends Controller{
         return view('pages.articleWrite');
     }
 
+    public function articleSearch(Request $request)
+    {
+        $query = $request->input('query');
+        $articles = Posts::where('title', 'like', "{$query}%")->get();
+        return view('pages.index', compact('articles', 'query'));
+    }
+
     public function filterByCategory($category)
     {
         if ($category === 'All') {

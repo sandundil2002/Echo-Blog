@@ -9,6 +9,7 @@ Route::get('/',[HomeController::class, "index"])->name('home');
 Route::get('/login-signup', [HomeController::class, 'showLoginSignupForm'])->name('loginSignup');
 Route::get('/user-profile', [HomeController::class, 'userProfile'])->name('userProfile');
 Route::get('/article-write', [HomeController::class, 'articleWrite'])->name('articleWrite');
+Route::get('/search', [HomeController::class, 'articleSearch'])->name('articleSearch');
 Route::get('/articles/category/{category}', [HomeController::class, 'filterByCategory'])->name('filterByCategory');
 Route::post('/checkUser', [UserController::class, 'checkUser'])->name('checkUser');
 Route::post('/login-signup', [UserController::class, 'saveUser'])->name('saveUser');
