@@ -35,4 +35,16 @@ class HomeController extends Controller{
         return view('pages.articleWrite');
     }
 
+    public function filterByCategory($category)
+    {
+        if ($category === 'All') {
+            $articles = Posts::all();
+        } else {
+            $articles = Posts::where('category', $category)->get();
+        }
+
+        return view('pages.index', compact('articles'));
+    }
+
+
 }
