@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         @if ($articles->isEmpty())
-            <p class="text-center fs-4">No articles available for this category.</p>
+            <p class="text-center fs-4 text-capitalize">No articles available</p>
         @else
             @foreach ($articles as $article)
                 <div class="card mb-3 m-3">
@@ -24,8 +24,8 @@
                                     </a>
                                 </h5>
 
-                                <p class="card-text text-capitalize" id="post-content">
-                                    {{ Str::limit($article->content, 200, '...') }}
+                                <p class="card-text text-capitalize fs-6" id="post-content">
+                                    {{ Str::limit($article->content, 300, '.....') }}
                                 </p>
                             </div>
                         </div>

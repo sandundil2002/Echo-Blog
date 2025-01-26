@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Posts;
 
-class HomeController extends Controller{
-    public function index(){
+class HomeController extends Controller
+{
+    public function index()
+    {
         try {
             $articles = Posts::all();
             return view('pages.index', compact('articles'));
