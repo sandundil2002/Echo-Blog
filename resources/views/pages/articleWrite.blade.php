@@ -9,7 +9,7 @@
 </head>
 <body>
     @include('components.profileNavbar')
-    
+
     @include('layouts.articleInput')
 
     @include('libraries.scripts')

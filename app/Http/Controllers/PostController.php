@@ -7,6 +7,7 @@ use App\Models\Posts;
 use Psy\Readline\Hoa\Console;
 use Session;
 use Validator;
+use Log;
 use function Laravel\Prompts\alert;
 
 class PostController extends Controller
@@ -14,9 +15,9 @@ class PostController extends Controller
     public function savePost(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255',
+            'title' => 'string|max:255',
             'category' => 'required',
-            'contents' => 'required|string',
+            'contents' => 'string',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -40,6 +41,7 @@ class PostController extends Controller
             $post->save();
             return redirect()->intended('/user-profile')->with('success', 'Post created successfully!');
         } catch (\Exception $e) {
+            Log::error('Error saving post: ' . $e->getMessage());
             return redirect()->back()->with('error', 'There was an error creating the post!');
         }
     }
@@ -54,6 +56,18 @@ class PostController extends Controller
             return redirect()->back()->with('error', 'An error occurred while retrieving posts.');
         }
     }
+
+    public function readArticle($id)
+    {
+        try {
+            $article = Posts::findOrFail($id);
+            return view('pages.articleView', compact('article'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while retrieving posts.');
+        }
+        
+    }
+
 
     public function deleteArticle($id)
     {
